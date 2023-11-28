@@ -1,0 +1,6 @@
+[User]
+	email = mederick.rouille@gmail.com
+	name = mederick
+
+[includeIf "gitdir:~/Epita/"]
+	path = .gitconfig-work
