@@ -55,12 +55,15 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+a kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+# launch rofi  with a custom theme  
+bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/launchers/type-2/launcher.sh
+
 
 # change focus
 bindsym $mod+j focus left
@@ -85,6 +88,18 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move focused window
+bindsym $mod+Ctrl+j move workspace to output left
+bindsym $mod+Ctrl+k move workspace to output down
+bindsym $mod+Ctrl+l move workspace to output up
+bindsym $mod+Ctrl+m move workspace to output right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Down move workspace to output down
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -149,6 +164,7 @@ bindsym $mod+Shift+underscore move container to workspace number $ws8
 bindsym $mod+Shift+ccedilla move container to workspace number $ws9
 bindsym $mod+Shift+agrave move container to workspace number $ws10
 
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -196,9 +212,15 @@ bar {
         output HDMI-0
 	status_command i3status
     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 15
+    	font pango:DejaVu Sans Mono 10
 }
 
+bar {
+        output DP-1-1-3
+	status_command i3status
+    	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    	font pango:DejaVu Sans Mono 15
+}
 
 
 
@@ -209,10 +231,9 @@ bar {
 #personal modification
 
 #setup second monitor
-exec --no-startup-id xrandr --output HDMI-0 --auto --left-of eDP-1-1
+exec --no-startup-id xrandr --output DP-1-1-3 --auto --left-of eDP-1-1
 
 #setup wallpaper
-exec nitrogen --restore &
 
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -232,21 +253,25 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # setup the diffrent workspace
-exec --no-startup-id i3-msg 'workspace $ws1; exec /bin/firefox'
-exec --no-startup-id i3-msg 'workspace $ws2; exec /bin/discord'
 exec --no-startup-id i3-msg 'workspace $ws4; exec /bin/keepassxc'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /bin/firefox'
 
 # setup lock screen 
 # for lid close go see /etc/systemd/system/suspend@.service 
-# set desktop background with custom effect
-exec --no-startup-id betterlockscreen -w dim
+
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
 
 bindsym $mod+Shift+v exec betterlockscreen -l
 
+# shudown computer
+bindsym $mod+Shift+s exec shutdown now
 
 
+# gaps 
+gaps inner 5
 
+default_border pixel 5
 
-
+# picom for transparancy
+exec --no-startup-id picom -b
