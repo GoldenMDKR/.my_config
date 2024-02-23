@@ -327,4 +327,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # start polybar
-exec --no-startup-id polybar
+exec --no-startup-id polybar -r bar1
