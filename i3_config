@@ -36,10 +36,13 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+
+#default control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -201,62 +204,62 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        output eDP-1-1
-	status_command i3status
-    	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 11
-
-        colors {
-                background #1B1A55
-                statusline #CCCCCC
-                separator #888888
-
-                focused_workspace  #4c7899 #535C91 #DDDDDD
-                active_workspace   #333333 #5f676a #DDDDDD
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
-                binding_mode       #2f343a #900000 #ffffff
-        }
-}
-
-bar {
-        output HDMI-0
-	status_command i3status
-    	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 10
-
-        colors {
-                background #1B1A55
-                statusline #CCCCCC
-                separator #888888
-
-                focused_workspace  #4c7899 #535C91 #DDDDDD
-                active_workspace   #333333 #5f676a #DDDDDD
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
-                binding_mode       #2f343a #900000 #ffffff
-        }
-}
-
-bar {
-        output DP-1-1-3
-	status_command i3status
-    	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 15
-
-        colors {
-                background #1B1A55
-                statusline #CCCCCC
-                separator #888888
-
-                focused_workspace  #4c7899 #535C91 #DDDDDD
-                active_workspace   #333333 #5f676a #DDDDDD
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
-                binding_mode       #2f343a #900000 #ffffff
-        }
-}
+# bar {
+#         output eDP-1-1
+# 	status_command i3status
+#     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#     	font pango:DejaVu Sans Mono 11
+# 
+#         colors {
+#                 background #1B1A55
+#                 statusline #CCCCCC
+#                 separator #888888
+# 
+#                 focused_workspace  #4c7899 #535C91 #DDDDDD
+#                 active_workspace   #333333 #5f676a #DDDDDD
+#                 inactive_workspace #333333 #222222 #888888
+#                 urgent_workspace   #2f343a #900000 #ffffff
+#                 binding_mode       #2f343a #900000 #ffffff
+#         }
+# }
+# 
+# bar {
+#         output HDMI-0
+# 	status_command i3status
+#     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#     	font pango:DejaVu Sans Mono 10
+# 
+#         colors {
+#                 background #1B1A55
+#                 statusline #CCCCCC
+#                 separator #888888
+# 
+#                 focused_workspace  #4c7899 #535C91 #DDDDDD
+#                 active_workspace   #333333 #5f676a #DDDDDD
+#                 inactive_workspace #333333 #222222 #888888
+#                 urgent_workspace   #2f343a #900000 #ffffff
+#                 binding_mode       #2f343a #900000 #ffffff
+#         }
+# }
+# 
+# bar {
+#         output DP-1-1-3
+# 	status_command i3status
+#     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#     	font pango:DejaVu Sans Mono 15
+# 
+#         colors {
+#                 background #1B1A55
+#                 statusline #CCCCCC
+#                 separator #888888
+# 
+#                 focused_workspace  #4c7899 #535C91 #DDDDDD
+#                 active_workspace   #333333 #5f676a #DDDDDD
+#                 inactive_workspace #333333 #222222 #888888
+#                 urgent_workspace   #2f343a #900000 #ffffff
+#                 binding_mode       #2f343a #900000 #ffffff
+#         }
+# }
 
 
 
@@ -300,6 +303,8 @@ exec --no-startup-id source ~/.fehbg
 
 bindsym $mod+Shift+v exec betterlockscreen -l
 
+
+
 # shudown computer
 bindsym $mod+Shift+s exec shutdown now
 
@@ -320,3 +325,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
+
+# start polybar
+exec --no-startup-id polybar
