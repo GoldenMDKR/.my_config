@@ -206,6 +206,18 @@ bar {
 	status_command i3status
     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     	font pango:DejaVu Sans Mono 11
+
+        colors {
+                background #1B1A55
+                statusline #CCCCCC
+                separator #888888
+
+                focused_workspace  #4c7899 #535C91 #DDDDDD
+                active_workspace   #333333 #5f676a #DDDDDD
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2f343a #900000 #ffffff
+                binding_mode       #2f343a #900000 #ffffff
+        }
 }
 
 bar {
@@ -213,6 +225,18 @@ bar {
 	status_command i3status
     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     	font pango:DejaVu Sans Mono 10
+
+        colors {
+                background #1B1A55
+                statusline #CCCCCC
+                separator #888888
+
+                focused_workspace  #4c7899 #535C91 #DDDDDD
+                active_workspace   #333333 #5f676a #DDDDDD
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2f343a #900000 #ffffff
+                binding_mode       #2f343a #900000 #ffffff
+        }
 }
 
 bar {
@@ -220,6 +244,18 @@ bar {
 	status_command i3status
     	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     	font pango:DejaVu Sans Mono 15
+
+        colors {
+                background #1B1A55
+                statusline #CCCCCC
+                separator #888888
+
+                focused_workspace  #4c7899 #535C91 #DDDDDD
+                active_workspace   #333333 #5f676a #DDDDDD
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2f343a #900000 #ffffff
+                binding_mode       #2f343a #900000 #ffffff
+        }
 }
 
 
@@ -275,3 +311,12 @@ default_border pixel 5
 
 # picom for transparancy
 exec --no-startup-id picom -b
+
+# colors                 border  backgr. text    indicator child_border
+client.focused          #1B1A55 #1B1A55 #ffffff #1B1A55   #1B1A55
+client.focused_inactive #535C91 #535C91 #ffffff #535C91   #535C91
+client.unfocused        #535C91 #535C91 #888888 #535C91   #535C91
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
