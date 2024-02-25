@@ -328,3 +328,6 @@ client.background       #ffffff
 
 # start polybar
 exec --no-startup-id polybar -r bar1
+
+# floating windows
+for_window [class="Pavucontrol" instance="pavucontrol"] border normal 5, floating enable, 
