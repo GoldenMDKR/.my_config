@@ -306,8 +306,8 @@ bindsym $mod+Shift+v exec betterlockscreen -l
 
 
 # shudown computer
-bindsym $mod+Shift+s exec shutdown now
-
+bindsym $mod+Ctrl+Shift+s exec shutdown now
+bindsym $mod+Ctrl+Shift+r exec reboot
 
 # gaps 
 gaps inner 5
