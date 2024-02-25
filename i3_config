@@ -330,4 +330,5 @@ client.background       #ffffff
 exec --no-startup-id polybar -r bar1
 
 # floating windows
-for_window [class="Pavucontrol" instance="pavucontrol"] border normal 5, floating enable, 
+for_window [class="Pavucontrol" instance="pavucontrol"] border normal 5, floating enable 
+for_window [class="Nm-connection-editor" instance="nm-connection-editor"] border normal 5, floating enable, move position mouse, move up 45, move left 5
