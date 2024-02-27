@@ -3,4 +3,4 @@
 	name = mederick
 
 [includeIf "gitdir:~/Epita/"]
-	path = .gitconfig-work
+	path = .gitconfig-epita
