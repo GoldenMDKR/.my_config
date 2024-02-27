@@ -65,7 +65,7 @@ bindsym $mod+Shift+a kill
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 # launch rofi  with a custom theme  
-bindsym $mod+d exec --no-startup-id $HOME/.my_config/rofi/launcher-T2-S2.sh
+bindsym $mod+d exec --no-startup-id $HOME/.my_config/rofi-launcher/launcher-T2-S2.sh
 
 
 # change focus

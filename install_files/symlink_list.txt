@@ -5,3 +5,4 @@ ln -sf $HOME/.my_config/i3_config $HOME/.config/i3/config
 ln -sf $HOME/.my_config/picom.conf $HOME/.config/picom.conf
 ln -sf $HOME/.my_config/polybar_config.ini $HOME/.config/polybar/config.ini
 ln -sf $HOME/.my_config/betterlockscreenrc $HOME/.config/betterlockscreen/betterlockscreenrc
+ln -sf $HOME/.my_config/vimrc $HOME/.vimrc
