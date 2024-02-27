@@ -1,0 +1,7 @@
+ln -sf $HOME/.my_config/.i3status.conf $HOME/.i3status.conf 
+ln -sf $HOME/.my_config/.gitconfig $HOME/.gitconfig
+ln -sf $HOME/.my_config/.gitconfig-epita $HOME/.gitconfig-epitaC
+ln -sf $HOME/.my_config/i3_config $HOME/.config/i3/config
+ln -sf $HOME/.my_config/picom.conf $HOME/.config/picom.conf
+ln -sf $HOME/.my_config/polybar_config.ini $HOME/.config/polybar/config.ini
+ln -sf $HOME/.my_config/betterlockscreenrc $HOME/.config/betterlockscreen/betterlockscreenrc
